@@ -13,15 +13,15 @@
     <ul class="navbar-nav ml-auto text-white">
       {% if current_user.is_authenticated %}
       <li class="nav-item">
-        <a class="nav-link" href="{{url_for('blog.new_article')}}"><button type="button" class="btn btn-success btn-sm btn-rounded"><strong>POST ARTICLE</strong> </button>
+        <a class="nav-link" href="{{url_for('blog.new_article')}}"><strong>POST ARTICLE</strong>
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{{url_for('blog.profile',username=current_user.username)}}"><span class="badge badge-primary"><i class="fas fa-user"></i> {{current_user.username | capitalize}}</span>
+        <a class="nav-link" href="{{url_for('blog.profile',username=current_user.username)}}"><span class="badge badge-primary"> {{current_user.username | capitalize}}</span>
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{{url_for('auth.logout')}}"><i class="fas fa-sign-out-alt"></i> LogOut
+        <a class="nav-link" href="{{url_for('auth.logout')}}"> LogOut
         </a>
       </li>
       {%else%}

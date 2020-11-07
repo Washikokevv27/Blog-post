@@ -53,17 +53,17 @@
 
     <h5 class="my-2"><strong>Posts on page</strong> </h5>
     {%for article in popular%}
-    <div class="card card-image mb-2" style="background-image: url({{url_for('static',filename=article.article_cover_path)}});">
+    
 
       <div class="text-white text-center rgba-black-strong py-3 px-2">
         <div>
           <h5 class="pink-text"><i class="fas fa-chart-pie"></i> {{article.article_title}}</h5>
           <p>{{article.article_body|truncate(30)}}</p>
-          <a class="btn btn-pink" href="{{url_for('blog.article_details',article_id=article.id)}}"><i class="fas fa-clone left"></i> Read more ...</a>
+          <a class="btn btn-pink" href="{{url_for('blog.article_details',article_id=article.id)}}"> Read more ...</a>
         </div>
       </div>
   
-    </div>
+    
     {%endfor%}
 
 
