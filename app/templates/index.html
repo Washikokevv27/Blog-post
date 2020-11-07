@@ -1,35 +1,5 @@
 {% extends 'base.html' %}
 {%block content%}
-<section class="daily-quotes mt-4 ">
-  <div id="carousel-example" class="carousel slide" data-ride="carousel">
-    <div style="min-height:33vh" class="carousel-inner row w-100 mx-0" role="listbox">
-      <div  class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3 active"  data-interval="2000">
-        <div class="card text-center card-cascade wider mb-1">
-          <div class="view view-cascade gradient-card-header blue-gradient overlay waves-light">
-            <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Slides/img%20(1).jpg"
-            alt="Card image cap">
-          </div>
-          <div class="card-body card-body-cascade text-center">
-            <p><cite><em>“They kick you when you’re down, but they wanna kick it when you’re up.”  </em><br> – Hassan Juma</cite></p> 
-          </div>
-        </div>  
-      </div>
-      {% for quote in quotes %}
-      <div  class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3"  data-interval="2000">
-        <div class="card text-center card-cascade wider mb-1">
-          <div class="view view-cascade gradient-card-header blue-gradient overlay waves-light">
-            <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Slides/img%20(54).jpg"
-            alt="Card image cap">
-          </div>
-          <div class="card-body card-body-cascade text-center">
-            <p><cite><em>“{{quote.quote_text|truncate(90)}}”  </em><br> – {{quote.quote_author}}</cite></p> 
-          </div>
-        </div>  
-      </div>
-      {%endfor%}
-    </div>
-  </div>
-</section>
       
 <div class="row mt-4">
   <div class="col-lg-9 col-md-8 col-sm-12">
@@ -71,28 +41,17 @@
       {%else%}
         <div class="card article mx-4 mb-3">
           <div class="card-body">
-            <h4 class="card-header"><i class="far fa-angry mr-2"></i>Sorry, no article posted yet!!</h4>
+            <h4 class="card-header"></i>NO POST!!</h4>
           </div>
         </div>
       {%endif%}   
     </div>
   </div>
   <div class="col-lg-3 col-md-4 col-sm-12">
-    <h5 class="my-2"><strong>Tag Cloud</strong> </h5>
-    <div class="tags">
-      <a href="#"><span class="badge badge-pill badge-default">ALL</span></a>
-      <a href="{{url_for('blog.article_by_tag',tag='Fashion')}}"><span class="badge badge-pill badge-primary">FASHION</span></a>
-      <a href="{{url_for('blog.article_by_tag',tag='Entertainment')}}"><span class="badge badge-pill badge-secondary">ENTERTAINMENT</span></a>
-      <a href="{{url_for('blog.article_by_tag',tag='Food')}}"><span class="badge badge-pill badge-success">FOOD</span></a>
-      <a href="{{url_for('blog.article_by_tag',tag='Wellness')}}"><span class="badge badge-pill badge-info">WELLNESS</span></a>
-      <a href="{{url_for('blog.article_by_tag',tag='Music')}}"><span class="badge badge-pill badge-warning">MUSIC</span></a>
-      <a href="{{url_for('blog.article_by_tag',tag='Education')}}"><span class="badge badge-pill badge-danger">EDUCATION</span></a>
-      <a href="{{url_for('blog.article_by_tag',tag='Sports')}}"><span class="badge badge-pill badge-default">SPORTS</span></a>
-      <a href="{{url_for('blog.article_by_tag',tag='Others')}}"><span class="badge badge-pill badge-light">OTHERS</span></a>
-    </div>
+  
 
 
-    <h5 class="my-2"><strong>Popular Posts</strong> </h5>
+    <h5 class="my-2"><strong>Posts on page</strong> </h5>
     {%for article in popular%}
     <div class="card card-image mb-2" style="background-image: url({{url_for('static',filename=article.article_cover_path)}});">
 
